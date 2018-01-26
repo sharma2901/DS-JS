@@ -1,10 +1,10 @@
-// Class for Linked List, head and tail will contain Object of Node
+// Constructor function for Linked List, head and tail will contain Object of Node
 function LinkedList() {
   this.head = null;
   this.tail = null;
 }
 
-// Class for each node, value contains data, next and prev contains object of Node
+// Constructor function for each node, value contains data, next and prev contains object of Node
 function Node(value, next, prev) {
   this.value = value;
   this.next = next;
