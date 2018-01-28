@@ -13,7 +13,7 @@ function Node(value, next, prev) {
 
 // Adds value to the head of DoublyLinkedList
 DoublyLinkedList.prototype.addToHead = function(value) {
-  let newNode = new Node(value, this.head, null);
+  var newNode = new Node(value, this.head, null);
   if (this.head) this.head.prev = newNode;
   else this.tail = newNode;
   this.head = newNode;
@@ -21,7 +21,7 @@ DoublyLinkedList.prototype.addToHead = function(value) {
 
 // Adds value to the tail of DoublyLinkedList
 DoublyLinkedList.prototype.addToTail = function(value) {
-  let newNode = new Node(value, null, this.tail);
+  var newNode = new Node(value, null, this.tail);
   if (this.tail) this.tail.next = newNode;
   else this.head = newNode;
   this.tail = newNode;
@@ -30,7 +30,7 @@ DoublyLinkedList.prototype.addToTail = function(value) {
 // Removes the head from DoublyLinkedList, sets head to next node, and returns the value of old head
 DoublyLinkedList.prototype.removeHead = function() {
   if (!this.head) return null;
-  let value = this.head.value;
+  var value = this.head.value;
   this.head = this.head.next;
   if (this.head) this.head.prev = null;
   else this.tail = null;
@@ -40,7 +40,7 @@ DoublyLinkedList.prototype.removeHead = function() {
 // Removes the tail from DoublyLinkedList, sets tail to prev node, and returns the value of old tail
 DoublyLinkedList.prototype.removeTail = function() {
   if (!this.tail) return null;
-  let value = this.tail.value;
+  var value = this.tail.value;
   this.tail = this.tail.prev;
   if (this.tail) this.tail.next = null;
   else this.head = null;
@@ -50,7 +50,7 @@ DoublyLinkedList.prototype.removeTail = function() {
 // returns the value if found, null otherwise
 DoublyLinkedList.prototype.search = function(value) {
   if (!this.head) return null;
-  let currNode = this.head;
+  var currNode = this.head;
   while (currNode) {
     if (currNode.value === value) return currNode.value;
     currNode = currNode.next;
@@ -61,8 +61,8 @@ DoublyLinkedList.prototype.search = function(value) {
 // returns index of the value if found, -1 otherwise
 DoublyLinkedList.prototype.indexOf = function(value) {
   if (!this.head) return -1;
-  let currNode = this.head;
-  let counter = 0;
+  var currNode = this.head;
+  var counter = 0;
   while (currNode) {
     if (currNode.value === value) return counter;
     counter++;
@@ -72,7 +72,7 @@ DoublyLinkedList.prototype.indexOf = function(value) {
 };
 
 //Examples
-let ll = new DoublyLinkedList();
+var ll = new DoublyLinkedList();
 ll.addToHead(20); // Add 20 to Head
 ll.addToHead(10); // Add 10 to Head
 ll.addToTail(30); // Add 30 to Tail

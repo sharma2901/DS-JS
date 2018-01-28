@@ -28,7 +28,7 @@ Queue.prototype.peek = function() {
 
 //Examples
 
-let q = new Queue();
+var q = new Queue();
 q.add(10);
 q.add(20);
 q.add(30);

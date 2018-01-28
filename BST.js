@@ -51,9 +51,9 @@ BST.prototype.depthFirstTraversal = function(processFn, order) {
  * One Argument: processFn, to process each node
  */
 BST.prototype.breadthFirstTraversal = function(processFn) {
-  let queue = [this];
+  var queue = [this];
   while (queue.length) {
-    let node = queue.shift();
+    var node = queue.shift();
     if (node.left) queue.push(node.left);
     if (node.right) queue.push(node.right);
     processFn(node);
@@ -79,7 +79,7 @@ BST.prototype.getMaxVal = function() {
 //EXAMPLES
 
 //Create a new Binary Search Tree
-let bst = new BST(50);
+var bst = new BST(50);
 
 // processFn for DepthFirstTraversal
 function logForDFS(value) {

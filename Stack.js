@@ -29,7 +29,7 @@ Stack.prototype.peek = function() {
 
 //Examples
 
-let st = new Stack();
+var st = new Stack();
 st.push(10);
 st.push(20);
 st.push(30);

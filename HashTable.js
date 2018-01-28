@@ -23,8 +23,8 @@ function HashNode(key, value, next) {
  * @param {string} key
  */
 HashTable.prototype.hash = function(key) {
-  let sum = 0;
-  for (let i = 0; i < key.length; i++) {
+  var sum = 0;
+  for (var i = 0; i < key.length; i++) {
     sum += key.charCodeAt(i);
   }
   return sum % this.tableLength;
@@ -36,12 +36,12 @@ HashTable.prototype.hash = function(key) {
  * @param {*} value
  */
 HashTable.prototype.upsert = function(key, value) {
-  let index = this.hash(key);
+  var index = this.hash(key);
   if (!this.buckets[index]) this.buckets[index] = new HashNode(key, value);
   else if (this.buckets[index].key === key) {
     this.buckets[index].value = value;
   } else {
-    let currNode = this.buckets[index];
+    var currNode = this.buckets[index];
     while (currNode.next) {
       currNode = currNode.next;
       if (currNode.key === key) {
@@ -58,8 +58,8 @@ HashTable.prototype.upsert = function(key, value) {
  * @param {string} key
  */
 HashTable.prototype.get = function(key) {
-  let index = this.hash(key);
-  let currNode = this.buckets[index];
+  var index = this.hash(key);
+  var currNode = this.buckets[index];
   while (currNode) {
     if (currNode.key === key) {
       return currNode;
@@ -73,9 +73,9 @@ HashTable.prototype.get = function(key) {
  * get All HashNodes in an Array
  */
 HashTable.prototype.getAll = function() {
-  let nodesArray = [];
-  for (let i = 0; i < this.tableLength; i++) {
-    let currNode = this.buckets[i];
+  var nodesArray = [];
+  for (var i = 0; i < this.tableLength; i++) {
+    var currNode = this.buckets[i];
     while (currNode) {
       nodesArray.push(currNode);
       currNode = currNode.next;
@@ -87,7 +87,7 @@ HashTable.prototype.getAll = function() {
 // Examples
 
 // Create a new HasTable
-let ht = new HashTable(30);
+var ht = new HashTable(30);
 
 // Upsert Some Value
 ht.upsert('aman', 'aman@gmail.com');
