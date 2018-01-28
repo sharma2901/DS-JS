@@ -1,6 +1,5 @@
 function bubbleSort(arr) {
   for (var i = 0; i < arr.length; i++) {
-    console.log('Step', i, arr);
     for (var j = 0; j < arr.length - i; j++) {
       if (arr[j] > arr[j + 1]) {
         var lesser = arr[j + 1];
