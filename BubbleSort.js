@@ -1,10 +1,11 @@
 function bubbleSort(arr) {
   for (var i = 0; i < arr.length; i++) {
-    for (var j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[i]) {
-        var lesser = arr[j];
-        arr[j] = arr[i];
-        arr[i] = lesser;
+    console.log('Step', i, arr);
+    for (var j = 0; j < arr.length - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        var lesser = arr[j + 1];
+        arr[j + 1] = arr[j];
+        arr[j] = lesser;
       }
     }
   }
