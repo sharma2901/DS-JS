@@ -1,24 +1,20 @@
-function quickSort(arr, low, high) {
-  low = low || 0;
-  high = high || arr.length - 1;
-  var pivoteIndex = low;
-  var pivot = arr[pivoteIndex];
-  var i = low,
-    j = high;
-  while (i <= j) {
-    while (arr[i] < pivot) i++;
-    while (arr[j] > pivot) j--;
-    if (i <= j) {
-      var temp = arr[i];
-      arr[i] = arr[j];
-      arr[j] = temp;
-      i++;
-      j--;
-    }
+/**
+ * Simplest implementation for quick sort algorithm
+ */
+function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
   }
-  if (low < j) quickSort(arr, low, j);
-  if (i < high) quickSort(arr, i, high);
-  return arr;
+  var left = [];
+  var right = [];
+  var pivot = arr[0];
+  for (var i = 1; i < arr.length; i++) {
+    if (arr[i] <= pivot) left.push(arr[i]);
+    else right.push(arr[i]);
+  }
+  return quickSort(left)
+    .concat(pivot)
+    .concat(quickSort(right));
 }
 
 //Example
