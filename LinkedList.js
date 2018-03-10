@@ -1,7 +1,7 @@
 /**
- * Constructor Function for LiknedList
+ * Constructor Function for LinkedList
  */
-function LiknedList() {
+function LinkedList() {
   this.head = null;
 }
 
@@ -17,14 +17,14 @@ function Node(value, next) {
  * Insert data into head of linkedList
  * @param {*} data
  */
-LiknedList.prototype.insertFirst = function(data) {
+LinkedList.prototype.insertFirst = function(data) {
   this.head = new Node(data, this.head);
 };
 
 /**
  * Returns Size of LinkedList
  */
-LiknedList.prototype.size = function() {
+LinkedList.prototype.size = function() {
   var counter = 0;
   var currNode = this.head;
   while (currNode) {
@@ -37,14 +37,14 @@ LiknedList.prototype.size = function() {
 /**
  * Get first element of LinkedList
  */
-LiknedList.prototype.getFirst = function() {
+LinkedList.prototype.getFirst = function() {
   return this.head;
 };
 
 /**
  * Returns Last element of LinkedList
  */
-LiknedList.prototype.getLast = function() {
+LinkedList.prototype.getLast = function() {
   if (!this.head) return null;
   var currNode = this.head;
   while (currNode.next) currNode = currNode.next;
@@ -54,14 +54,14 @@ LiknedList.prototype.getLast = function() {
 /**
  * Clears the LinkedList
  */
-LiknedList.prototype.clear = function() {
+LinkedList.prototype.clear = function() {
   this.head = null;
 };
 
 /**
  * Removes the First element of LinkedList and returns it
  */
-LiknedList.prototype.removeFirst = function() {
+LinkedList.prototype.removeFirst = function() {
   if (!this.head) return null;
   var data = this.head;
   this.head = data.next;
@@ -71,7 +71,7 @@ LiknedList.prototype.removeFirst = function() {
 /**
  * Removes last element from LinkedList and returns it
  */
-LiknedList.prototype.removeLast = function() {
+LinkedList.prototype.removeLast = function() {
   if (!this.head) return null;
   if (!this.head.next) {
     var data = this.head;
@@ -91,7 +91,7 @@ LiknedList.prototype.removeLast = function() {
 /**
  * Inserts new node to the tail of LinkedList
  */
-LiknedList.prototype.insertLast = function(data) {
+LinkedList.prototype.insertLast = function(data) {
   var newNode = new Node(data);
   if (!this.head) this.head = newNode;
   var node = this.head;
@@ -100,7 +100,7 @@ LiknedList.prototype.insertLast = function(data) {
 };
 
 //Examples
-var ll = new LiknedList();
+var ll = new LinkedList();
 ll.insertFirst(10);
 ll.insertFirst(20);
 ll.insertFirst(30);
